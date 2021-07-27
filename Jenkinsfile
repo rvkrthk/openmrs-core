@@ -5,7 +5,7 @@ node ('MAVEN'){
     stage('BUILD'){
         sh 'mvn package'
     }
-    post{
+    stage ('POST BUILD'){
         junit '**/TEST-*.xml'
         archive '**/*.war'
     }
